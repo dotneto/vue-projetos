@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../vue.js"></script>
+    <link rel="stylesheet" href="../style/bootstrap.css">
+</head>
+<body>
+<br><br>
+<div id="app" class="container">
+
+
+    <div class="row">
+        <div class="card col">
+            <div class="card-header">
+                <h5>Abertos</h5>
+            </div>
+            <div class="card-body">
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th scope="col">Descrição</th>
+                        <th scope="col">Ação</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr v-for="(l, index) in todos" v-if="l.active">
+                        <td>{{l.description}}</td>
+                        <td>
+                            <button @click="completar(index)" class="btn btn-success btn-sm">Completar</button>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+        <br>
+        <div class="card col">
+            <div class="card-header">
+                <h5>Completos</h5>
+            </div>
+            <div class="card-body">
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th scope="col">Descrição</th>
+                        <th scope="col">Hora</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr v-for="(l, index) in todos" v-if="!l.active">
+                        <td>{{l.description}}</td>
+                        <td>{{l.date}}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+    <hr>
+    <div class="card">
+        <div class="card-header">
+            <h5>Adicionar novo ToDo</h5>
+        </div>
+        <div class="card-body">
+            <form class="form-inline">
+                <div class="form-group mx-sm-3 mb-2">
+                    <label for="inputPassword2" class="sr-only">Password</label>
+                    <input type="text" class="form-control" id="inputPassword2" placeholder="Descrição"
+                           v-model="todo.description">
+                </div>
+                <button type="button" class="btn btn-primary mb-2" @click="addTodo">Add</button>
+            </form>
+        </div>
+    </div>
+
+</div>
+
+</body>
+<script src="app.js"></script>
+</html>
