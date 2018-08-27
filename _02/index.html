@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../vue.js"></script>
+    <link rel="stylesheet" href="../style/bootstrap.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="app" class="container">
+
+    <div class="row">
+        <div class="card col">
+            <div class="card-header"><h3>País 1</h3></div>
+            <div class="card-body">
+                <div class="text-center">
+                    <img src="images/flag1.png" class="figure-img img-fluid rounded"
+                         @mouseover="mouseOver(1)" @mouseleave="mouseLeave(1)">
+                    <div v-show="flag1">
+                        <h3 class="card-title text-center">Brasil</h3>
+                        <p class="card-text text-justify">:informações do país 1:</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card col">
+            <div class="card-header"><h3>País 2</h3></div>
+            <div class="card-body">
+                <div class="text-center">
+                    <img src="images/flag2.jpg" class="figure-img img-fluid rounded"
+                         @mouseover="mouseOver(2)" @mouseleave="mouseLeave(2)">
+                    <div v-show="flag2">
+                        <h3 class="card-title text-center">Coreia do Sul</h3>
+                        <p class="card-text text-justify">:informações do país 2:</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card col">
+            <div class="card-header"><h3>País 3</h3></div>
+            <div class="card-body">
+                <div class="text-center">
+                    <img src="images/flag3.jpg" class="figure-img img-fluid rounded"
+                         @mouseover="mouseOver(3)" @mouseleave="mouseLeave(3)">
+                    <div v-show="flag3">
+                        <h3 class="card-title text-center">Africa do Sul</h3>
+                        <p class="card-text text-justify">:informações do país 3:</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+</body>
+<script src="app.js"></script>
+</html>
